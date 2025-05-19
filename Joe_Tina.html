@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>致我的贺欣欣, 520快乐!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+KuaiLe&display=swap');
+        
+        :root {
+            --primary: #ff4d79;
+            --secondary: #6a11cb;
+            --bg: #0f0e17;
+            --text: #fffffe;
+        }
+        
+        body {
+            background-image: url("f18ff4db1bdac46f814cbcff0446990.jpg");
+            background-size: cover;
+            color: var(--text);
+            font-family: 'Ma Shan Zheng', cursive;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            animation: fadeIn 2s ease-in-out;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 10px rgba(255, 77, 121, 0.5);
+        }
+        
+        .subtitle {
+            font-family: 'ZCOOL KuaiLe', sans-serif;
+            color: var(--secondary);
+            font-size: 1.2rem;
+        }
+        
+        .memory {
+            margin-bottom: 3rem;
+            padding: 1.5rem;
+            border-left: 3px solid var(--primary);
+            background: rgba(15, 14, 23, 0.7);
+            border-radius: 0 8px 8px 0;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .memory:hover {
+            transform: translateX(10px);
+            box-shadow: 0 0 20px rgba(255, 77, 121, 0.2);
+        }
+        
+        .memory-title {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-top: 0;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .memory-content {
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+        
+        .memory::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(106, 17, 203, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .memory:hover::before {
+            opacity: 1;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem 0;
+            border-top: 1px solid rgba(255, 77, 121, 0.3);
+            font-family: 'ZCOOL KuaiLe', sans-serif;
+        }
+        
+        .signature {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .location {
+            color: var(--secondary);
+            font-size: 0.9rem;
+        }
+        
+        .pixel-heart {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: var(--primary);
+            position: relative;
+            transform: rotate(45deg);
+            margin: 0 5px;
+            animation: pulse 1.5s infinite;
+        }
+        
+        .pixel-heart::before,
+        .pixel-heart::after {
+            content: "";
+            width: 20px;
+            height: 20px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            position: absolute;
+        }
+        
+        .pixel-heart::before {
+            top: -10px;
+            left: 0;
+        }
+        
+        .pixel-heart::after {
+            top: 0;
+            left: -10px;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes pulse {
+            0% { transform: rotate(45deg) scale(1); }
+            50% { transform: rotate(45deg) scale(1.2); }
+            100% { transform: rotate(45deg) scale(1); }
+        }
+        
+        @keyframes glitch {
+            0% { text-shadow: 2px 0 var(--primary), -2px 0 var(--secondary); }
+            25% { text-shadow: -2px 0 var(--primary), 2px 0 var(--secondary); }
+            50% { text-shadow: 2px 0 var(--secondary), -2px 0 var(--primary); }
+            75% { text-shadow: -2px 0 var(--secondary), 2px 0 var(--primary); }
+            100% { text-shadow: 2px 0 var(--primary), -2px 0 var(--secondary); }
+        }
+        
+        .glitch-text {
+            animation: glitch 1s infinite steps(1);
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .memory-title {
+                font-size: 1.5rem;
+            }
+        }
+        
+        /* 特殊效果 */
+        .cursor-trail {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            mix-blend-mode: screen;
+            z-index: 9999;
+        }
+
+        #sound_of_silence {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>致我的赛博爱人</h1>
+            <div class="subtitle">一封来自深圳的像素情书</div>
+        </header>
+        
+        <div class="memory" id="mountain">
+            <h2 class="memory-title">第一幕：大运山·初始存档点</h2>
+            <div class="memory-content">
+                还记得吗？那天在大运山迷路，我们像《绣湖》里找钥匙的旅人，<br>
+                最后发现出口就在起点右手边——<br>
+                一座咖啡馆里阳光洒下的书桌<br>
+                <strong>原来相遇才是唯一正确的路径。</strong>
+            </div>
+        </div>
+        
+        <div class="memory" id="lake">
+            <h2 class="memory-title">第二幕：神仙湖·雨水校验码</h2>
+            <div class="memory-content">
+                深圳的暴雨来得像《第七天》的系统崩溃，<br>
+                我们在神仙湖凉亭躲雨，<br>
+                你数着水面涟漪，我算着雨滴帧率，<br>
+                <strong>那一刻的卡顿，成了最流畅的浪漫。</strong>
+            </div>
+        </div>
+        
+        <div class="memory" id="bay">
+            <h2 class="memory-title">第三幕：深圳湾·数据洋流</h2>
+            <div class="memory-content">
+                退潮时滩涂露出电路板般的纹路，<br>
+                像《绣湖》里未破解的密码图。<br>
+                你指着对岸说香港像渲染失败的贴图，<br>
+                我却觉得我们才是程序里的两个异常值——<br>
+                <strong>因为正常变量不会在咸腥海风里十指相扣。</strong>
+            </div>
+        </div>
+
+        <div class="memory" id="summit">
+            <h2 class="memory-title">第四幕：梧桐山·内存释放</h2>
+            <div class="memory-content">
+                海拔943米处，云雾突然加载出深圳全景，<br>
+                腾讯大厦在远处像未完成的建模，<br>
+                我们喘着气说这比《绣湖》电梯关卡还累，<br>
+                <strong>但你知道吗？</strong><br>
+                所有游戏都有结局，<br>
+                只有这个城市的地图会永远自动更新——<br>
+                <strong>在每一个有你存在的坐标点。</strong>
+            </div>
+        </div>
+        
+        <div class="memory" id="hike">
+            <h2 class="memory-title">终章：东西涌·物理碰撞检测</h2>
+            <div class="memory-content">
+                徒步那天的太阳是BUG般的暴击伤害，<br>
+                礁石上的生蚝壳划破你的防晒衣，<br>
+                我在补给点狂灌water，像喝血瓶的NPC，<br>
+                <strong>直到你买下快艇驶离绝望的孤岛——</strong><br>
+                原来最伟大的物理引擎是心跳。
+            </div>
+        </div>
+        
+        <footer>
+            <div class="signature">爱你的男友Joe</div>
+            <div class="location">于浙江省.杭州市.某一个想你的角落</div>
+            <div class="location">(背景音效：某个盛夏的神仙湖畔.wav)</div>
+            <div style="margin-top: 1rem;">
+                这封情书像CUHKSZ的WIFI信号——<br>
+                <span class="glitch-text">不稳定但永远满格。</span> <span class="pixel-heart"></span>
+            </div>
+        </footer>
+    </div>
+    <audio controls autoplay loop id = "sound_of_silence">
+        <source src="M8000028Ca8i0LZElm.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // 创建光标拖尾效果
+        document.addEventListener('DOMContentLoaded', () => {
+            const cursorTrail = document.createElement('div');
+            cursorTrail.classList.add('cursor-trail');
+            document.body.appendChild(cursorTrail);
+            
+            const positions = [];
+            const maxPositions = 5;
+            
+            document.addEventListener('mousemove', (e) => {
+                // 更新主光标位置
+                cursorTrail.style.left = `${e.clientX}px`;
+                cursorTrail.style.top = `${e.clientY}px`;
+                
+                // 存储位置历史
+                positions.unshift({ x: e.clientX, y: e.clientY });
+                if (positions.length > maxPositions) {
+                    positions.pop();
+                }
+            });
+            
+            // 为记忆区块添加悬停效果
+            const memories = document.querySelectorAll('.memory');
+            memories.forEach(memory => {
+                memory.addEventListener('mouseenter', () => {
+                    memory.style.borderLeft = `3px solid ${getRandomColor()}`;
+                });
+                
+                memory.addEventListener('mouseleave', () => {
+                    memory.style.borderLeft = '3px solid var(--primary)';
+                });
+            });
+            
+            function getRandomColor() {
+                const colors = ['#6a11cb', '#2575fc', '#ff4d79', '#25d1fd', '#fbc531'];
+                return colors[Math.floor(Math.random() * colors.length)];
+            }
+        });
+        
+        // 横屏特殊效果
+        function checkOrientation() {
+            if (window.matchMedia("(orientation: landscape)").matches) {
+                document.body.style.backgroundImage += ', url("https://placeholder-for-shenzhen-pixel-art.png")';
+            }
+        }
+        
+        window.addEventListener('resize', checkOrientation);
+        checkOrientation();
+    </script>
+</body>
+</html>
